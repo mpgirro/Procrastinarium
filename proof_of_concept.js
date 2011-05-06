@@ -1,11 +1,12 @@
 
 var enabled=true
 document.onmousedown=function(event) {
-	if(enabled) {
-		alert(enabled + ":" + event.button)
+	if(enabled){
+		if(event.button==0){
+			alert(enabled)
+		}
 	}
 }
 document.onkeypress=function(event) {
-	if(event.keyCode==27)
-		enabled=false
+	enabled=false
 }
