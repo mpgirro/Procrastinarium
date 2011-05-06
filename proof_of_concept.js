@@ -10,6 +10,7 @@ document.onmousedown=function(event) {
 document.onkeydown=function(event) {
 	alert("keypress")
 	if(event.keyCode==27){
+		alert("escape")
 		if(enabled){	
 			enabled=false
 		}else{
