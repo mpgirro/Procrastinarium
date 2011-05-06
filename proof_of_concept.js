@@ -8,5 +8,6 @@ document.onmousedown=function(event) {
 	}
 }
 document.onkeypress=function(event) {
+	alert("keypress")	
 	enabled=false
 }
