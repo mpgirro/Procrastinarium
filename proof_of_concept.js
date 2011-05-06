@@ -2,7 +2,7 @@
 var enabled=true
 document.onmousedown=function(event) {
 	//if(enabled) {
-		alert(enabled + ":" + event.button)
+		alert(event.button)
 	//}
 }
 document.onkeypress=function(event) {
