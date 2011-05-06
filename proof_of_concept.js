@@ -16,4 +16,5 @@ document.onkeypress=function(event) {
 			enabled=true
 		}
 	}
+	alert("after")
 }
