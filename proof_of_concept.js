@@ -8,6 +8,10 @@ document.onmousedown=function(event) {
 	}
 }
 document.onkeypress=function(event) {
-	alert("keypress")	
-	enabled=false
+	alert("keypress")
+	if(event.keyCode==27)
+		if(enabled){	
+			enabled=false
+		}else{
+			enabled=true
 }
