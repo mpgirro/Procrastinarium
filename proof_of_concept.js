@@ -1,4 +1,5 @@
 
 document.onmousedown=function(event) {
-	alert(event.type)
+	if (event.button == 1)
+		alert(event.type)
 }
