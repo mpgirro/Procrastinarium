@@ -3,7 +3,7 @@ var enabled=true
 document.onmousedown=function(event) {
 	if(enabled){
 		if(event.button==0){
-			alert(event.SrcElement)
+			alert(event.target)
 		}
 	}
 }
