@@ -7,7 +7,7 @@ document.onmousedown=function(event) {
 		}
 	}
 }
-document.onkeypress=function(event) {
+document.onkeydown=function(event) {
 	alert("keypress")
 	if(event.keyCode==27){
 		if(enabled){	
