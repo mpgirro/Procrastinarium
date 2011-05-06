@@ -1,1 +1,4 @@
-alert("zomg it works!!!!1111")
+
+document.onmousedown=function(event) {
+	alert(event.type)
+}
