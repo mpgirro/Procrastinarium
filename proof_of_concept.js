@@ -2,8 +2,7 @@
 var enabled=true
 document.onmousedown=function(event) {
 	if(enabled) {
-		if(event.button==1)
-			alert(event.type)
+		alert(event.button)
 	}
 }
 document.onkeypress=function(event) {
