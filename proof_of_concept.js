@@ -9,10 +9,6 @@ document.onmousedown=function(event) {		//MOUSE DOWN
 		if(event.button==0){
 			m_down=true;
 			m_down_element=event.target;
-			var m_down_el_pos=getPosition(m_down_element);
-			m_down_element.style.position='absolute';
-			m_down_element.style.top=m_down_el_pos.y;
-			m_down_element.style.left=m_down_el_pos.x;
 			last_x=event.clientX;
 			last_y=event.clientY;
 		}
@@ -34,8 +30,8 @@ document.onmousemove=function(event) {		//MOUSE MOVE
 		event=event || window.event;
 		var mX=event.clientX;
 		var mY=event.clientY;
-		m_down_element.style.top=m_down_element.style.top+(mY-last_y)
-		m_down_element.style.left=m_down_element.style.left+(mX-last_x)
+		m_down_element.style.marginTop=m_down_element.style.marginTop+(mY-last_y)
+		m_down_element.style.marginLeft=m_down_element.style.marginLeft+(mX-last_x)
 		last_x=mX;
 		last_y=mY;
 		window.focus();			//by calling the alert function, the current window looses focus and no more keydown events would be possible
