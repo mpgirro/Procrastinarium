@@ -1,26 +1,26 @@
 
 var enabled=true
 document.onmousedown=function(event) {
-	var e=window.event || event;
+	event=event || window.event;
 	if(enabled){
-		if(e.button==0){
-			//alert(e.clientX + " " + e.clientY);
+		if(event.button==0){
+			alert(event.clientX + " " + event.clientY);
 		}
 	}
-}
-document.observe('keydown', function(event) {
+};
+document.onkeydown=function(event) {
 	alert("keydown");
-	var e=window.event || event;
+	event=event || window.event;
 	var k;
 	if(window.event){ //IE
-		k=e.keyCode;
+		k=event.keyCode;
 	}
-	else if(e.which){ // Netscape/Firefox/Opera
-		k=e.which;
+	else if(event.which){ // Netscape/Firefox/Opera
+		k=event.which;
 	}else{
 		k=0
 	}
 	if(k==27){
 		enabled = !enabled
 	}
-});
+};
