@@ -4,7 +4,6 @@ document.onmousedown=function(event) {
 	var e=window.event || event;
 	if(enabled){
 		if(e.button==0){
-			alert("yay");
 			alert(e.clientX + " " + e.clientY);
 		}
 	}
