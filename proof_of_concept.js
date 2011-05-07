@@ -1,14 +1,16 @@
 
 var enabled=true
 document.onmousedown=function(event) {
+	var e=window.event || e
 	if(enabled){
-		if(event.button==0){
-			alert(event.target.name)
+		if(e.button==0){
+			alert(e.clientX + " " + e.clientY)
 		}
 	}
 }
 document.onkeydown=function(event) {
 	alert("keypress")
+	var e=window.event || event
 	//var k;
 	//if(window.event){ //IE
 	//	k=e.keyCode;
