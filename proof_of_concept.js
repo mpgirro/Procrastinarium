@@ -1,5 +1,5 @@
 
-document.focus()
+window.focus()
 var enabled=true
 document.onmousedown=function(event) {
 	event=event || window.event;
