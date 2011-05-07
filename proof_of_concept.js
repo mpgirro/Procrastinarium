@@ -30,6 +30,7 @@ document.onmousemove=function(event) {		//MOUSE MOVE
 		event=event || window.event;
 		var mX=event.clientX;
 		var mY=event.clientY;
+		alert(m_down_element.style.marginLeft + " " + m_down_element.style.marginTop);
 		m_down_element.style.marginLeft=(parseInt(m_down_element.style.marginLeft)+(mX-last_x))+"px";
 		m_down_element.style.marginTop=(parseInt(m_down_element.style.marginTop)+(mY-last_y))+"px";
 		last_x=mX;
