@@ -9,9 +9,8 @@ document.onmousedown=function(event) {
 	}
 }
 document.onkeydown=function(event) {
-	alert("keypress");
+	alert("keydown");
 	var e=window.event || event;
-	alert("after")
 	//var k;
 	//if(window.event){ //IE
 	//	k=e.keyCode;
