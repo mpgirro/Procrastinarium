@@ -4,11 +4,11 @@ document.onmousedown=function(event) {
 	var e=window.event || event;
 	if(enabled){
 		if(e.button==0){
-			alert(e.clientX + " " + e.clientY);
+			//alert(e.clientX + " " + e.clientY);
 		}
 	}
 }
-window.onkeydown=function(event) {
+document.observe('keydown', function(event) {
 	alert("keydown");
 	var e=window.event || event;
 	var k;
@@ -23,4 +23,4 @@ window.onkeydown=function(event) {
 	if(k==27){
 		enabled = !enabled
 	}
-}
+});
