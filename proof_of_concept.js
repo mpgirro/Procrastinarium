@@ -9,6 +9,8 @@ document.onmousedown=function(event) {		//MOUSE DOWN
 		if(event.button==0){
 			m_down=true;
 			m_down_element=event.target;
+			m_down_element.style.marginLeft="0px";
+			m_down_element.style.marginTop="0px";
 			last_x=event.clientX;
 			last_y=event.clientY;
 		}
