@@ -1,5 +1,6 @@
 window.focus()
 var enabled=true
+var m_down=false
 var m_down_element=null
 var m_x=0
 var m_y=0
@@ -7,6 +8,7 @@ document.onmousedown=function(event) {		//MOUSE DOWN
 	if(enabled){
 		event=event || window.event;
 		if(event.button==0){
+			m_down=true
 			m_down_element=event.target;
 			m_x=event.clientX;
 			m_y=event.clientY;
@@ -16,17 +18,12 @@ document.onmousedown=function(event) {		//MOUSE DOWN
 };
 
 document.onmouseup=function(event) {		//MOUSE UP
-	if(enabled){
-		event=event || window.event;
-		if(event.button==0){
-			m_down_element=null;
-		}
-		window.focus();			//by calling the alert function, the current window looses focus and no more keydown events would be possible
-	}	
+	m_down=false
+	m_down_element=null;
 };
 
 document.onmousemove=function(event) {		//MOUSE MOVE
-	if(enabled && (m_down_element != null)){
+	if(enabled && m_down){
 		event=event || window.event;
 		var mX=event.clientX;
 		var mY=event.clientY;
