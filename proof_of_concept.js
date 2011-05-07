@@ -10,7 +10,7 @@ document.onmousedown=function(event) {		//MOUSE DOWN
 		if(event.button==0){
 			m_down=true;
 			m_down_element=event.target;
-			m_down_el_pos=etPosition(m_down_element);
+			m_down_el_pos=getPosition(m_down_element);
 			last_x=event.clientX;
 			last_y=event.clientY;
 		}
