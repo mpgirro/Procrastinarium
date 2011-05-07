@@ -11,8 +11,8 @@ document.onmousedown=function(event) {		//MOUSE DOWN
 			m_down_element=event.target;
 			var m_down_el_pos=getPosition(m_down_element);
 			m_down_element.style.position='absolute';
-			m_down_element.stype.top=m_down_el_pos.y;
-			m_down_element.stype.left=m_down_el_pos.x;
+			m_down_element.style.top=m_down_el_pos.y;
+			m_down_element.style.left=m_down_el_pos.x;
 			last_x=event.clientX;
 			last_y=event.clientY;
 		}
