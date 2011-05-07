@@ -9,8 +9,10 @@ document.onmousedown=function(event) {		//MOUSE DOWN
 		if(event.button==0){
 			m_down=true;
 			m_down_element=event.target;
-			m_down_element.style.marginLeft="0px";
-			m_down_element.style.marginTop="0px";
+			if(!m_down_element.style.marginLeft)
+				m_down_element.style.marginLeft="0px";
+			if(!m_down_element.style.marginTop)
+				m_down_element.style.marginTop="0px";
 			last_x=event.clientX;
 			last_y=event.clientY;
 		}
@@ -32,7 +34,6 @@ document.onmousemove=function(event) {		//MOUSE MOVE
 		event=event || window.event;
 		var mX=event.clientX;
 		var mY=event.clientY;
-		alert(m_down_element.style.marginLeft + " " + m_down_element.style.marginTop);
 		m_down_element.style.marginLeft=(parseInt(m_down_element.style.marginLeft)+(mX-last_x))+"px";
 		m_down_element.style.marginTop=(parseInt(m_down_element.style.marginTop)+(mY-last_y))+"px";
 		last_x=mX;
