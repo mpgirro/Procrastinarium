@@ -8,6 +8,7 @@ document.onmousedown=function(event) {
 			alert(event.clientX + " " + event.clientY);
 		}
 	}
+	window.focus()
 };
 document.onkeydown=function(event) {
 	alert("keydown");
@@ -24,4 +25,5 @@ document.onkeydown=function(event) {
 	if(k==27){
 		enabled = !enabled
 	}
+	window.focus()
 };
