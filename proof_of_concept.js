@@ -8,7 +8,7 @@ document.onmousedown=function(event) {
 		}
 	}
 }
-document.onkeydown=function(event) {
+window.onkeydown=function(event) {
 	alert("keydown");
 	var e=window.event || event;
 	var k;
