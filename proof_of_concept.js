@@ -26,7 +26,7 @@ document.onmouseup=function(event) {		//MOUSE UP
 };
 
 document.onmousemove=function(event) {		//MOUSE MOVE
-	if(enabled && m_down_element){
+	if(enabled && (m_down_element != null)){
 		event=event || window.event;
 		var mX=event.clientX;
 		var mY=event.clientY;
