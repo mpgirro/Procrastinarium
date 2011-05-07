@@ -34,8 +34,8 @@ document.onmousemove=function(event) {		//MOUSE MOVE
 		event=event || window.event;
 		var mX=event.clientX;
 		var mY=event.clientY;
-		m_down_element.stype.top=m_down_element.stype.top+(mY-last_y)
-		m_down_element.stype.left=m_down_element.stype.left+(mX-last_x)
+		m_down_element.style.top=m_down_element.style.top+(mY-last_y)
+		m_down_element.style.left=m_down_element.style.left+(mX-last_x)
 		last_x=mX;
 		last_y=mY;
 		window.focus();			//by calling the alert function, the current window looses focus and no more keydown events would be possible
