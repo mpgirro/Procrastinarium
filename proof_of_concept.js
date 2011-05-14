@@ -62,7 +62,7 @@ document.onkeydown=function(event) {
 function getPosition(element) {
 	var elem=element,tagname="",x=0,y=0;
   
-	while ((typeof(elem)=="object")&&(typeof(elem.tagName)!="undefined")) {
+	while ((typeof(elem)=="object")){//&&(typeof(elem.tagName)!="undefined")) {
     		y+=elem.offsetTop;    
     		x+=elem.offsetLeft;    
     		tagname=elem.tagName.toUpperCase();
