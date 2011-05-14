@@ -67,12 +67,14 @@ function getPosition(element) {
     		x+=elem.offsetLeft;    
     		tagname=elem.tagName.toUpperCase();
 
-    		if (tagname=="BODY")
-      			elem=0;
+    		//if (tagname=="BODY")
+      		//	elem=0;
 
     		if (typeof(elem)=="object")
       			if (typeof(elem.offsetParent)=="object")
        				elem=elem.offsetParent;
+			else
+				elem=0
 	}
 
 	position=new Object();
