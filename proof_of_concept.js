@@ -6,15 +6,15 @@ var last_y=0;
 document.onmousedown=function(event) {		//MOUSE DOWN
 	if(enabled){
 		event=event || window.event;
-		if(event.button==0){
+		if(event.button==0 && checkElement(event.target){
 			m_down=true;
 			m_down_element=event.target;
 			last_x=event.clientX;
 			last_y=event.clientY;
 			position = getPosition(m_down_element);
 			if (m_down_element.parentNode){
-				m_down_element.parentNode.removeChild(m_down_element)
-				document.body.appendChild(m_down_element)
+				m_down_element.parentNode.removeChild(m_down_element);
+				document.body.appendChild(m_down_element);
 			}
 			m_down_element.style.position="absolute";
 			m_down_element.style.left=position[0]+"px";
@@ -73,4 +73,12 @@ function getPosition(element) {
 		} while(element=element.offsetParent);
 	}
   	return [x,y];
+}
+
+function checkElement(element) {
+	if (element.name.toUpperCase() == "BODY") {
+		return false;
+	}
+	return true;
+
 }
