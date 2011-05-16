@@ -8,6 +8,7 @@ document.onmousedown=function(event) {		//MOUSE DOWN
 		event=event || window.event;
 		alert("hello");
 		alert(checkElement(event.target));
+		alert("hello2");
 		if(event.button==0 && checkElement(event.target)){
 			m_down=true;
 			m_down_element=event.target;
@@ -78,6 +79,7 @@ function getPosition(element) {
 }
 
 function checkElement(element) {
+	alert("helloFunc");
 	if (element.name.toUpperCase() == "BODY") {
 		return false;
 	}
