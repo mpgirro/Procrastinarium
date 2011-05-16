@@ -6,6 +6,8 @@ var last_y=0;
 document.onmousedown=function(event) {		//MOUSE DOWN
 	if(enabled){
 		event=event || window.event;
+		alert("hello");
+		alert(checkElement(event.target));
 		if(event.button==0 && checkElement(event.target)){
 			m_down=true;
 			m_down_element=event.target;
@@ -77,7 +79,6 @@ function getPosition(element) {
 
 function checkElement(element) {
 	if (element.name.toUpperCase() == "BODY") {
-		alert(element.name.toUpperCase())
 		return false;
 	}
 	return true;
