@@ -77,6 +77,7 @@ function getPosition(element) {
 
 function checkElement(element) {
 	if (element.name.toUpperCase() == "BODY") {
+		alert(element.name.toUpperCase())
 		return false;
 	}
 	return true;
