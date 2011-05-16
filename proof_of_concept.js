@@ -6,7 +6,7 @@ var last_y=0;
 document.onmousedown=function(event) {		//MOUSE DOWN
 	if(enabled){
 		event=event || window.event;
-		if(event.button==0 && checkElement(event.target){
+		if(event.button==0 && checkElement(event.target)){
 			m_down=true;
 			m_down_element=event.target;
 			last_x=event.clientX;
