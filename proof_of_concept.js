@@ -11,8 +11,8 @@ document.onmousedown=function(event) {		//MOUSE DOWN
 			m_down_element=event.target;
 			position = getPosition(m_down_element);
 			m_down_element.style.position="absolute";
-			m_down_element.style.top=position.y+"px";
-			m_down_element.style.left=position.x+"px";
+			m_down_element.style.left=position[0]+"px";
+			m_down_element.style.top=position[1]+"px";
 			last_x=event.clientX;
 			last_y=event.clientY;
 		}
@@ -60,25 +60,12 @@ document.onkeydown=function(event) {
 
 
 function getPosition(element) {
-	var elem=element,tagname="",x=0,y=0;
-  
-	while (elem){//&&(typeof(elem.tagName)!="undefined")) {
-    		y+=elem.offsetTop;    
-    		x+=elem.offsetLeft;    
-    		tagname=elem.tagName.toUpperCase();
-
-    		//if (tagname=="BODY")
-      		//	elem=0;
-
-    		if (typeof(elem)=="object")
-      			if (typeof(elem.offsetParent)=="object")
-       				elem=elem.offsetParent;
-			else
-				elem=null
+	var x=0,y=0; 
+	if (element.offsetParent){
+		do {
+    			y+=element.offsetTop;    
+    			x+=element.offsetLeft;    
+		} while(element=element.offsetParent);
 	}
-
-	position=new Object();
-  	position.x=x;
-  	position.y=y;
-  	return position;
+  	return [x,y];
 }
