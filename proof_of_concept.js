@@ -76,9 +76,11 @@ function getPosition(element) {
 }
 
 function checkElement(element) {
-	alert(element.tagName.toUpperCase());
-	if (element.tagName.toUpperCase() == "BODY") {
-		return false;
+	var nono=["BODY","HTML"];
+	for(var i=0;i<nono.length;i++){
+		if (element.tagName.toUpperCase() == nono[i]) {
+			return false;
+		}
 	}
 	return true;
 
