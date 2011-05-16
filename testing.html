@@ -1,0 +1,31 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<link type="text/css" rel="stylesheet" href="testing.css"></link>	
+	</head>
+	<body>
+		<div id="el1"><p>Lorem Ipsum dolor sit amet</p></div>
+
+		<div><p id="out">output goes here</p></div>
+
+		<script type="text/javascript">
+			par=document.getElementById("out");
+			el=document.getElementById("el1");
+		
+			pos=getPosition(el);
+			par.innerHTML=pos[0] + " : " + pos[1];
+			
+
+			function getPosition(element) {
+				var x=0,y=0; 
+				if (element.offsetParent){
+					do {
+    						y+=element.offsetTop;    
+    						x+=element.offsetLeft;    
+					} while(element=element.offsetParent);
+				}
+  				return [x,y];
+			}
+		</script>
+	</body>
+</html>

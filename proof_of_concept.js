@@ -9,12 +9,13 @@ document.onmousedown=function(event) {		//MOUSE DOWN
 		if(event.button==0){
 			m_down=true;
 			m_down_element=event.target;
+			last_x=event.clientX;
+			last_y=event.clientY;
 			position = getPosition(m_down_element);
 			m_down_element.style.position="absolute";
 			m_down_element.style.left=position[0]+"px";
 			m_down_element.style.top=position[1]+"px";
-			last_x=event.clientX;
-			last_y=event.clientY;
+			
 		}
 		window.focus();			//by calling the alert function, the current window looses focus and no more keydown events would be possible
 	}			
@@ -61,11 +62,12 @@ document.onkeydown=function(event) {
 
 function getPosition(element) {
 	var x=0,y=0; 
-	if (element.offsetParent){
+	return [element.offsetLeft,element.offsetTop]
+	/*if (element.offsetParent){
 		do {
     			y+=element.offsetTop;    
     			x+=element.offsetLeft;    
 		} while(element=element.offsetParent);
 	}
-  	return [x,y];
+  	return [x,y];*/
 }

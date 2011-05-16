@@ -1,0 +1,16 @@
+#el1 {
+	background-color: #000000;
+	position: absolute;
+	width: 100px;
+	height: 100px;
+}
+
+#out {
+	position: absolute;
+	width: 100px;
+	height: 100px;
+	right: 10px;
+	top: 10px;
+}
+
+
