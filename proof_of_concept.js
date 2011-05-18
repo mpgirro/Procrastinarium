@@ -1,24 +1,26 @@
 window.focus();
 var enabled=true;
-var m_down_element=null;
+var moveElement=null;
 var last_x=0;
 var last_y=0;
+var noClick=["BODY","HTML"];
+var moveAsOne=["FORM"];
 document.onmousedown=function(event) {		//MOUSE DOWN
 	if(enabled){
 		event=event || window.event;
 		if(event.button==0 && checkElement(event.target)){
 			m_down=true;
-			m_down_element=event.target;
+			moveElement=getElementToMove(event.target);
 			last_x=event.clientX;
 			last_y=event.clientY;
-			position = getPosition(m_down_element);
-			if (m_down_element.parentNode){
-				m_down_element.parentNode.removeChild(m_down_element);
-				document.body.appendChild(m_down_element);
+			position=getPosition(moveElement);
+			if (moveElement.parentNode){
+				moveElement.parentNode.removeChild(moveElement);
+				document.body.appendChild(moveElement);
 			}
-			m_down_element.style.position="absolute";
-			m_down_element.style.left=position[0]+"px";
-			m_down_element.style.top=position[1]+"px";
+			moveElement.style.position="absolute";
+			moveElement.style.left=position[0]+"px";
+			moveElement.style.top=position[1]+"px";
 			
 		}
 		window.focus();			//by calling the alert function, the current window looses focus and no more keydown events would be possible
@@ -29,17 +31,17 @@ document.onmouseup=function(event) {		//MOUSE UP
 	vent=event || window.event;
 	if(event.button==0){
 		m_down=false;
-		m_down_element=null;
+		moveElement=null;
 	}
 };
 
 document.onmousemove=function(event) {		//MOUSE MOVE
-	if(enabled && m_down_element){
+	if(enabled && moveElement){
 		event=event || window.event;
 		var mX=event.clientX;
 		var mY=event.clientY;
-		m_down_element.style.left=(parseInt(m_down_element.style.left)+(mX-last_x))+"px";
-		m_down_element.style.top=(parseInt(m_down_element.style.top)+(mY-last_y))+"px";
+		moveElement.style.left=(parseInt(moveElement.style.left)+(mX-last_x))+"px";
+		moveElement.style.top=(parseInt(moveElement.style.top)+(mY-last_y))+"px";
 		last_x=mX;
 		last_y=mY;
 		window.focus();			//by calling the alert function, the current window looses focus and no more keydown events would be possible
@@ -76,12 +78,25 @@ function getPosition(element) {
 }
 
 function checkElement(element) {
-	var nono=["BODY","HTML"];
-	for(var i=0;i<nono.length;i++){
-		if (element.tagName.toUpperCase() == nono[i]) {
+	for(var i=0;i<noClick.length;i++){
+		if (element.tagName.toUpperCase() == noClick[i]) {
 			return false;
 		}
 	}
 	return true;
 
+}
+
+function getElementToMove(element){
+	var tag=element.tagName.toUpperCase();
+	var el=element;
+	do{
+		for(var i=0;i<moveAsOne.length;i++){
+			if (el.tagName.toUpperCase() == moveAsOne[i]) {
+				return el;
+			}
+		}
+		el=el.parentNode;
+	}while(el);
+	return element;
 }
