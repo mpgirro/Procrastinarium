@@ -15,7 +15,6 @@ document.onmousedown=function(event) {		//MOUSE DOWN
 			last_y=event.clientY;
 			position=getPosition(moveElement);
 			if (moveElement.parentNode){
-				substitute=getSubstitute(moveElement);
 				moveElement.parentNode.replaceChild(substitute, moveElement);
 				document.body.appendChild(moveElement);
 			}
@@ -101,15 +100,4 @@ function getElementToMove(element){
 		el=el.parentNode;
 	}while(el);
 	return element;
-}
-
-function getSubstitute(element){
-	var newEl=null;
-	if(!element.tagName){
-		newEl=document.createElement("DIV");
-	}else{
-		newEl=document.createElement(element.tagName);
-	}
-	newEl.style=element.style;
-	return newEl;
 }
