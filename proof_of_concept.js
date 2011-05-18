@@ -88,7 +88,6 @@ function checkElement(element) {
 }
 
 function getElementToMove(element){
-	alert(element.form);
 	if(element.form){
 		return element.form;
 	}
