@@ -11,7 +11,6 @@ document.onmousedown=function(event) {		//MOUSE DOWN
 		if(event.button==0 && checkElement(event.target)){
 			m_down=true;
 			moveElement=getElementToMove(event.target);
-			alert(moveElement)
 			last_x=event.clientX;
 			last_y=event.clientY;
 			position=getPosition(moveElement);
