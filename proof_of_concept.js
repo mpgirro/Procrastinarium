@@ -88,12 +88,13 @@ function checkElement(element) {
 }
 
 function getElementToMove(element){
-	var tag=element.tagName.toUpperCase();
 	var el=element;
 	do{
-		for(var i=0;i<moveAsOne.length;i++){
-			if (el.tagName.toUpperCase() == moveAsOne[i]) {
-				return el;
+		if(el.tagName){
+			for(var i=0;i<moveAsOne.length;i++){
+				if (el.tagName.toUpperCase() == moveAsOne[i]) {
+					return el;
+				}
 			}
 		}
 		el=el.parentNode;
