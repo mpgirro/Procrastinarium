@@ -4,7 +4,7 @@ var moveElement=null;
 var last_x=0;
 var last_y=0;
 var noClick=["BODY","HTML"];
-var moveAsOne=["P"];
+var moveAsOne=["FORM","P"];
 document.onmousedown=function(event) {		//MOUSE DOWN
 	if(enabled){
 		event=event || window.event;
@@ -88,9 +88,6 @@ function checkElement(element) {
 }
 
 function getElementToMove(element){
-	if(element.form){
-		return element.form;
-	}
 	var el=element;
 	do{
 		if(el.tagName){
