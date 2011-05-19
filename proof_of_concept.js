@@ -15,7 +15,7 @@ document.onmousedown=function(event) {		//MOUSE DOWN
 			last_y=event.clientY;
 			position=getPosition(moveElement);
 			if (moveElement.parentNode){
-				moveElement.parentNode.replaceChild(substitute, moveElement);
+				moveElement.parentNode.removeChild(moveElement);
 				document.body.appendChild(moveElement);
 			}
 			moveElement.style.position="absolute";
